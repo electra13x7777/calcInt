@@ -222,7 +222,7 @@ int main()
 				dec_to_bin(x);
 				printf(" :: %d\n<< ", x);
 				dec_to_bin(y);
-				printf(" :: %d\n------------------- <<\n   ", y);
+				printf(" :: %d\n━━━━━━━━━━━━━━━━━━━  <<\n   ", y);
 				dec_to_bin(z);
 				printf(" :: %d\n", z);
 				break;
@@ -232,7 +232,7 @@ int main()
 				dec_to_bin(x);
 				printf(" :: %d\n>> ", x);
 				dec_to_bin(y);
-				printf(" :: %d\n------------------- >>\n   ", y);
+				printf(" :: %d\n━━━━━━━━━━━━━━━━━━━  >>\n   ", y);
 				dec_to_bin(z);
 				printf(" :: %d\n", z);
 				break;
@@ -242,7 +242,7 @@ int main()
 				dec_to_bin(x);
 				printf(" : : %d\n & ", x);
 				dec_to_bin(y);
-				printf(" : : %d\n------------------- AND\n   ", y);
+				printf(" : : %d\n━━━━━━━━━━━━━━━━━━━  AND\n   ", y);
 				dec_to_bin(z);
 				printf(" : : %d\n", z);
 				break;
@@ -252,7 +252,7 @@ int main()
 				dec_to_bin(x);
 				printf(" :: %d\n | ", x);
 				dec_to_bin(y);
-				printf(" :: %d\n------------------- OR\n   ", y);
+				printf(" :: %d\n━━━━━━━━━━━━━━━━━━━  OR\n   ", y);
 				dec_to_bin(z);
 				printf(" :: %d\n", z);
 				break;
@@ -262,7 +262,7 @@ int main()
 				dec_to_bin(x);
 				printf(" : : %d\n ^ ", x);
 				dec_to_bin(y);
-				printf(" : : %d\n------------------- XOR\n   ", y);
+				printf(" : : %d\n━━━━━━━━━━━━━━━━━━━  XOR\n   ", y);
 				dec_to_bin(z);
 				printf(" : : %d\n", z);
 				break;
@@ -272,7 +272,7 @@ int main()
 				dec_to_bin(x);
 				printf(" : : %d\n + ", x);
 				dec_to_bin(y);
-				printf(" : : %d\n------------------- ADD\n   ", y);
+				printf(" : : %d\n━━━━━━━━━━━━━━━━━━━  ADD\n   ", y);
 				dec_to_bin(z);
 				printf(" : : %d\n", z);
 				break;
@@ -282,7 +282,7 @@ int main()
 				dec_to_bin(x);
 				printf(" : : %d\n - ", x);
 				dec_to_bin(y);
-				printf(" : : %d\n------------------- SUB\n   ", y);
+				printf(" : : %d\n━━━━━━━━━━━━━━━━━━━  SUB\n   ", y);
 				dec_to_bin(z);
 				printf(" : : %d\n", z);
 				break;
@@ -292,7 +292,7 @@ int main()
 				dec_to_bin(x);
 				printf(" : : %d\n * ", x);
 				dec_to_bin(y);
-				printf(" : : %d\n------------------- MUL\n   ", y);
+				printf(" : : %d\n━━━━━━━━━━━━━━━━━━━  MUL\n   ", y);
 				dec_to_bin(z);
 				printf(" : : %d\n", z);
 				break;
@@ -302,12 +302,12 @@ int main()
 				dec_to_bin(x);
 				printf(" : : %d\n / ", x);
 				dec_to_bin(y);
-				printf(" : : %d\n------------------- DIV\n   ", y);
+				printf(" : : %d\n━━━━━━━━━━━━━━━━━━━  DIV\n   ", y);
 				dec_to_bin(z);
 				printf(" : : %d\n", z);
 				break;
 			case('h'):
-				printf(" ________________\n");
+				printf("┏━━━━━━━━━━━━━━━━┓\n");
 				printf("|ch == op :: ABR |\n");
 				printf("|                |\n");
 				printf("| + == +  :: ADD |\n");
@@ -319,7 +319,7 @@ int main()
 				printf("| & == &  :: AND |\n");
 				printf("| | == |  :: OR  |\n");
 				printf("| ^ == ^  :: XOR |\n");
-				printf("|________________|\n");
+				printf("┗━━━━━━━━━━━━━━━━┛\n");
 				break;
 			case('q'):
 				exit(0);
