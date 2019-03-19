@@ -2,10 +2,13 @@
 A lightweight terminal calculator
 
 ### Running calcInt16
+##### 16 Bit
 `$ ./calcInt16`
+##### 32 Bit
+`$ ./calcInt32`
 
 ### Formatting
-calcInt16 uses infix notation
+calcInt uses infix notation
 
 ```
 ┏━━━━━━━━━━━━━━━┓
