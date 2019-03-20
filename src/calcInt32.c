@@ -25,7 +25,7 @@ void dec_to_bin(int a)
     memset(&threebyteArr, 9, 0);
 
    	//2^31
-    if(a - 2147483648 >= 0 || a >= 2147483648)
+    if(((uint32_t) (a)) - 2147483648 >= 0)
     {
         fourbyteArr[0] = '1';
         a-=2147483648;
@@ -115,7 +115,8 @@ void dec_to_bin(int a)
 
 	printf( "%s", fourbyteArr);
     memset(&fourbyteArr, 9, 0);
-    /*-------24BIT-------*/
+
+	/*-------24BIT-------*/
     //2^23
     if(a - 8388608 >= 0)
     {
@@ -203,7 +204,6 @@ void dec_to_bin(int a)
         threebyteArr[7] = '0';
     }
 
-
     printf("%s", threebyteArr);
     memset(&threebyteArr, 9, 0);
 	bin = a;
@@ -213,7 +213,6 @@ void dec_to_bin16(int a)
 {
 	char twobyteArr[9];
    	char byteArr[9];
-    //memset(&fourbyteArr, 9, 0);
     memset(&byteArr, 9, 0);
 
 
@@ -307,8 +306,8 @@ void dec_to_bin16(int a)
 
     printf("%s", twobyteArr);
     memset(&twobyteArr, 9, 0);
-    /*-------8BIT-------*/
 
+	/*-------8BIT-------*/
     // 2^7
     if(a - 128 >= 0)
     {
@@ -396,158 +395,158 @@ void dec_to_bin16(int a)
     {
         byteArr[7] = '0';
     }
-    printf("%s", byteArr);
+
+	printf("%s", byteArr);
 	memset(&bin, 0, 0);
 }
 
 int main()
 {
     char s;
-	char *pre;
-    int x, y, z;
-	printf("\033[1;39m┏━━━━━━━━━━━━━━━┓\n");
+    int32_t x, y, z;
+    printf("\033[1;39m┏━━━━━━━━━━━━━━━┓\n");
     printf("\033[1;39m\033[1;32m3\033[1;31m2 \033[1;36mB\033[1;33mi\033[1;34mt \033[1;35mCalculator\033[1;39m\n");
     printf("┗━━━━━━━━━━━━━━━┛");
 
 	while(1)
 	{
 		printf("\n$ ");
-		scanf("%d %c %d", &x, &s, &y);
+		scanf("%llu %c %llu", &x, &s, &y);
 		printf("\n");
 
 		switch(s)
 		{
 			case('<'):
 				z = ALS(x, y);
-				printf("%d << %d = %d\n\n   ", x, y, z);
+				printf("%llu << %llu = %llu\n\n   ", x, y, z);
 				dec_to_bin(x);
 				dec_to_bin16(bin);
-				printf(" :: %d\n<< ", x);
+				printf(" :: %llu\n<< ", x);
 				dec_to_bin(y);
 				dec_to_bin16(bin);
-				printf(" :: %d\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  <<\n   ", y);
+				printf(" :: %llu\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  <<\n   ", y);
 				dec_to_bin(z);
 				dec_to_bin16(bin);
 				printf(" :: %llu\n", z);
 				break;
 			case('>'):
 				z = ARS(x, y);
-				printf("%d >> %d = %d\n\n   ", x, y, z);
+				printf("%llu >> %llu = %llu\n\n   ", x, y, z);
 				dec_to_bin(x);
 				dec_to_bin16(bin);
-				printf(" :: %d\n>> ", x);
+				printf(" :: %llu\n>> ", x);
 				dec_to_bin(y);
 				dec_to_bin16(bin);
-				printf(" :: %d\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  >>\n   ", y);
+				printf(" :: %llu\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  >>\n   ", y);
 				dec_to_bin(z);
 				dec_to_bin16(bin);
 				printf(" :: %llu\n", z);
 				break;
 			case('&'):
 				z = AND(x, y);
-				printf("%d & %d = %d\n\n   ", x, y, z);
+				printf("%llu & %llu = %llu\n\n   ", x, y, z);
 				dec_to_bin(x);
 				dec_to_bin16(bin);
-				printf(" : : %d\n & ", x);
+				printf(" : : %llu\n & ", x);
 				dec_to_bin(y);
 				dec_to_bin16(bin);
-				printf(" : : %d\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  AND\n   ", y);
+				printf(" : : %llu\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  AND\n   ", y);
 				dec_to_bin(z);
 				dec_to_bin16(bin);
 				printf(" : : %llu\n", z);
 				break;
 			case('|'):
 				z = OR(x, y);
-				printf("%d | %d = %d\n\n   ", x, y, z);
+				printf("%llu | %llu = %llu\n\n   ", x, y, z);
 				dec_to_bin(x);
 				dec_to_bin16(bin);
-				printf(" :: %d\n | ", x);
+				printf(" :: %llu\n | ", x);
 				dec_to_bin(y);
 				dec_to_bin16(bin);
-				printf(" :: %d\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  OR\n   ", y);
+				printf(" :: %llu\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  OR\n   ", y);
 				dec_to_bin(z);
 				dec_to_bin16(bin);
 				printf(" :: %llu\n", z);
 				break;
 			case('^'):
 				z = XOR(x, y);
-				printf("%d ^ %d = %d\n\n   ", x, y, z);
+				printf("%llu ^ %llu = %llu\n\n   ", x, y, z);
 				dec_to_bin(x);
 				dec_to_bin16(bin);
-				printf(" : : %d\n ^ ", x);
+				printf(" : : %llu\n ^ ", x);
 				dec_to_bin(y);
 				dec_to_bin16(bin);
-				printf(" : : %d\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  XOR\n   ", y);
+				printf(" : : %llu\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  XOR\n   ", y);
 				dec_to_bin(z);
 				dec_to_bin16(bin);
 				printf(" : : %llu\n", z);
 				break;
 		    case('+'):
 				z = x + y;
-				printf("%d + %d = %d\n\n   ", x, y, z);
+				printf("%llu + %llu = %llu\n\n   ", x, y, z);
 				dec_to_bin(x);
 				dec_to_bin16(bin);
-				printf(" : : %d\n + ", x);
+				printf(" : : %llu\n + ", x);
 				dec_to_bin(y);
 				dec_to_bin16(bin);
-				printf(" : : %d\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  ADD\n   ", y);
+				printf(" : : %llu\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  ADD\n   ", y);
 				dec_to_bin(z);
 				dec_to_bin16(bin);
 				printf(" : : %llu\n", z);
 				break;
 		    case('-'):
 				z = x - y;
-				printf("%d - %d = %d\n\n   ", x, y, z);
+				printf("%llu - %llu = %llu\n\n   ", x, y, z);
 				dec_to_bin(x);
 				dec_to_bin16(bin);
-				printf(" : : %d\n - ", x);
+				printf(" : : %llu\n - ", x);
 				dec_to_bin(y);
 				dec_to_bin16(bin);
-				printf(" : : %d\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  SUB\n   ", y);
+				printf(" : : %llu\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  SUB\n   ", y);
 				dec_to_bin(z);
 				dec_to_bin16(bin);
 				printf(" : : %llu\n", z);
 				break;
 		    case('*'):
 				z = x * y;
-				printf("%d * %d = %d\n\n   ", x, y, z);
+				printf("%llu * %llu = %llu\n\n   ", x, y, z);
 				dec_to_bin(x);
 				dec_to_bin16(bin);
-				printf(" : : %d\n * ", x);
+				printf(" : : %llu\n * ", x);
 				dec_to_bin(y);
 				dec_to_bin16(bin);
-				printf(" : : %d\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  MUL\n   ", y);
+				printf(" : : %llu\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  MUL\n   ", y);
 				dec_to_bin(z);
 				dec_to_bin16(bin);
 				printf(" : : %llu\n", z);
 				break;
 		    case('/'):
 				z = x / y;
-				printf("%d / %d = %d\n\n   ", x, y, z);
+				printf("%llu / %llu = %llu\n\n   ", x, y, z);
 				dec_to_bin(x);
 				dec_to_bin16(bin);
-				printf(" : : %d\n / ", x);
+				printf(" : : %llu\n / ", x);
 				dec_to_bin(y);
 				dec_to_bin16(bin);
-				printf(" : : %d\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  DIV\n   ", y);
+				printf(" : : %llu\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  DIV\n   ", y);
 				dec_to_bin(z);
 				dec_to_bin16(bin);
 				printf(" : : %llu\n", z);
 				break;
 			case('h'):
-				printf("┏━━━━━━━━━━━━━━━━┓\n");
-				printf("|ch == op :: ABR |\n");
-				printf("|                |\n");
-				printf("| + == +  :: ADD |\n");
-				printf("| - == -  :: SUB |\n");
-				printf("| * == *  :: MUL |\n");
-				printf("| / == /  :: DIV |\n");
-				printf("| < == << :: ALS |\n");
-				printf("| > == >> :: ARS |\n");
-				printf("| & == &  :: AND |\n");
-				printf("| | == |  :: OR  |\n");
-				printf("| ^ == ^  :: XOR |\n");
-				printf("┗━━━━━━━━━━━━━━━━┛\n");
+				printf("┏━━━━━━━━━━━━━━━┓\n");
+				printf("┃ch == op :: ABR┃\n");
+				printf("┃               ┃\n");
+				printf("┃ + == +  :: ADD┃\n");
+				printf("┃ - == -  :: SUB┃\n");
+				printf("┃ * == *  :: MUL┃\n");
+				printf("┃ / == /  :: DIV┃\n");
+				printf("┃ < == << :: ALS┃\n");
+				printf("┃ > == >> :: ARS┃\n");
+				printf("┃ & == &  :: AND┃\n");
+				printf("┃ | == |  :: OR ┃\n");
+				printf("┃ ^ == ^  :: XOR┃\n");
+				printf("┗━━━━━━━━━━━━━━━┛\n");
 				break;
 			case('q'):
 				exit(0);
