@@ -1,8 +1,11 @@
 # calcInt
 A lightweight terminal calculator
 
-### Running calcInt16
-##### 16 Bit
+### Build
+The current build of calcInt is *calcInt32*
+
+### Running calcInt
+##### 16 Bit (DEPRECATED)
 `$ ./calcInt16`
 ##### 32 Bit
 `$ ./calcInt32`
@@ -12,7 +15,7 @@ calcInt uses infix notation
 
 ```
 ┏━━━━━━━━━━━━━━━┓
-16 Bit Calculator
+32 Bit Calculator
 ┗━━━━━━━━━━━━━━━┛
 $ NUM OP NUM
 ```
@@ -25,4 +28,4 @@ Format: NUM *OP* NUM
 
 ### Binary
 The included precompiled binary was compiled with:
-*gcc calcInt.c -O2 -o calcInt16*
+*gcc calcInt32.c -O2 -o calcInt32*
