@@ -8,8 +8,10 @@ The current build of calcInt is *calcInt32*
 ##### 16 Bit (DEPRECATED)
 `$ ./calcInt16`
 ##### 32 Bit
+###### Bin
 `$ ./calcInt32`
-
+###### Hex
+`$ ./calcInt32h`
 ### Formatting
 calcInt uses infix notation
 
