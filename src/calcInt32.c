@@ -209,8 +209,9 @@ void dec_to_bin(int a)
 	bin = a;
 }
 
-void dec_to_bin16(int a)
+void dec_to_bin16()
 {
+	int a = bin;
 	char twobyteArr[9];
    	char byteArr[9];
     memset(&byteArr, 9, 0);
@@ -420,117 +421,117 @@ int main()
 				z = ALS(x, y);
 				printf("%llu << %llu = %llu\n\n   ", x, y, z);
 				dec_to_bin(x);
-				dec_to_bin16(bin);
+				dec_to_bin16();
 				printf(" :: %llu\n<< ", x);
 				dec_to_bin(y);
-				dec_to_bin16(bin);
+				dec_to_bin16();
 				printf(" :: %llu\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  <<\n   ", y);
 				dec_to_bin(z);
-				dec_to_bin16(bin);
+				dec_to_bin16();
 				printf(" :: %llu\n", z);
 				break;
 			case('>'):
 				z = ARS(x, y);
 				printf("%llu >> %llu = %llu\n\n   ", x, y, z);
 				dec_to_bin(x);
-				dec_to_bin16(bin);
+				dec_to_bin16();
 				printf(" :: %llu\n>> ", x);
 				dec_to_bin(y);
-				dec_to_bin16(bin);
+				dec_to_bin16();
 				printf(" :: %llu\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  >>\n   ", y);
 				dec_to_bin(z);
-				dec_to_bin16(bin);
+				dec_to_bin16();
 				printf(" :: %llu\n", z);
 				break;
 			case('&'):
 				z = AND(x, y);
 				printf("%llu & %llu = %llu\n\n   ", x, y, z);
 				dec_to_bin(x);
-				dec_to_bin16(bin);
+				dec_to_bin16();
 				printf(" : : %llu\n & ", x);
 				dec_to_bin(y);
-				dec_to_bin16(bin);
+				dec_to_bin16();
 				printf(" : : %llu\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  AND\n   ", y);
 				dec_to_bin(z);
-				dec_to_bin16(bin);
+				dec_to_bin16();
 				printf(" : : %llu\n", z);
 				break;
 			case('|'):
 				z = OR(x, y);
 				printf("%llu | %llu = %llu\n\n   ", x, y, z);
 				dec_to_bin(x);
-				dec_to_bin16(bin);
+				dec_to_bin16();
 				printf(" :: %llu\n | ", x);
 				dec_to_bin(y);
-				dec_to_bin16(bin);
+				dec_to_bin16();
 				printf(" :: %llu\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  OR\n   ", y);
 				dec_to_bin(z);
-				dec_to_bin16(bin);
+				dec_to_bin16();
 				printf(" :: %llu\n", z);
 				break;
 			case('^'):
 				z = XOR(x, y);
 				printf("%llu ^ %llu = %llu\n\n   ", x, y, z);
 				dec_to_bin(x);
-				dec_to_bin16(bin);
+				dec_to_bin16();
 				printf(" : : %llu\n ^ ", x);
 				dec_to_bin(y);
-				dec_to_bin16(bin);
+				dec_to_bin16();
 				printf(" : : %llu\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  XOR\n   ", y);
 				dec_to_bin(z);
-				dec_to_bin16(bin);
+				dec_to_bin16();
 				printf(" : : %llu\n", z);
 				break;
 		    case('+'):
 				z = x + y;
 				printf("%llu + %llu = %llu\n\n   ", x, y, z);
 				dec_to_bin(x);
-				dec_to_bin16(bin);
+				dec_to_bin16();
 				printf(" : : %llu\n + ", x);
 				dec_to_bin(y);
-				dec_to_bin16(bin);
+				dec_to_bin16();
 				printf(" : : %llu\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  ADD\n   ", y);
 				dec_to_bin(z);
-				dec_to_bin16(bin);
+				dec_to_bin16();
 				printf(" : : %llu\n", z);
 				break;
 		    case('-'):
 				z = x - y;
 				printf("%llu - %llu = %llu\n\n   ", x, y, z);
 				dec_to_bin(x);
-				dec_to_bin16(bin);
+				dec_to_bin16();
 				printf(" : : %llu\n - ", x);
 				dec_to_bin(y);
-				dec_to_bin16(bin);
+				dec_to_bin16();
 				printf(" : : %llu\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  SUB\n   ", y);
 				dec_to_bin(z);
-				dec_to_bin16(bin);
+				dec_to_bin16();
 				printf(" : : %llu\n", z);
 				break;
 		    case('*'):
 				z = x * y;
 				printf("%llu * %llu = %llu\n\n   ", x, y, z);
 				dec_to_bin(x);
-				dec_to_bin16(bin);
+				dec_to_bin16();
 				printf(" : : %llu\n * ", x);
 				dec_to_bin(y);
-				dec_to_bin16(bin);
+				dec_to_bin16();
 				printf(" : : %llu\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  MUL\n   ", y);
 				dec_to_bin(z);
-				dec_to_bin16(bin);
+				dec_to_bin16();
 				printf(" : : %llu\n", z);
 				break;
 		    case('/'):
 				z = x / y;
 				printf("%llu / %llu = %llu\n\n   ", x, y, z);
 				dec_to_bin(x);
-				dec_to_bin16(bin);
+				dec_to_bin16();
 				printf(" : : %llu\n / ", x);
 				dec_to_bin(y);
-				dec_to_bin16(bin);
+				dec_to_bin16();
 				printf(" : : %llu\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  DIV\n   ", y);
 				dec_to_bin(z);
-				dec_to_bin16(bin);
+				dec_to_bin16();
 				printf(" : : %llu\n", z);
 				break;
 			case('h'):
